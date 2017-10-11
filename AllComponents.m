@@ -353,7 +353,7 @@ methods
          [XX,YY]=meshgrid((-obj.N(2)/2 : 1: obj.N(2)/2-1)*obj.grid_spacing(2),(-obj.N(1)/2 : 1: obj.N(1)/2-1)*obj.grid_spacing(1));
          
          sigma_proj=sigma.*obj.G1ToG2Distance./(obj.SourceToG1Distance);    % projected source size (FWHM)
-         sigma_proj _sq=sigma_proj.^2/(8.*log(2));
+         sigma_proj_sq=sigma_proj.^2/(8.*log(2));
          gaussX   = exp(-(1/2).*(XX.^2)./sigma_proj_sq(2));
          gaussY   = exp(-(1/2).*(YY.^2)./sigma_proj_sq(1));
          srcgauss = gaussX .* gaussY;
